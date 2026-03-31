@@ -1,31 +1,28 @@
-import React from 'react'
+import React from "react";
 
 const ChildComponent = ({ isLoggedIn, setisLoggedIn }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setisLoggedIn(true);
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();   // prevent page reload
-        setisLoggedIn(true);  // update parent state
-    };
+  return (
+    <>
+      {!isLoggedIn ? (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Username:</label>
+          <input id="username" type="text" />
 
-    return (
-        <>
-            {!isLoggedIn ? (
-                <form onSubmit={handleSubmit} action="">
-                    <label htmlFor="Username">Username:</label>
-                    <input id="Username" type="text" />
-                    <br /> <br />
-                    <label htmlFor="Password">Password:</label>
-                    <input id="Password" type="password" />
-                    <br /> <br />
-                    <button type='submit'>Login</button>
+          <label htmlFor="password">Password:</label>
+          <input id="password" type="password" />
 
-                </form>
-            ) : (
-                <h2>You are logged in!</h2>
-            )}
-        </>
+          <button type="submit">Login</button>
+        </form>
+      ) : (
+        <p>You are logged in!</p>
+      )}
+    </>
+  );
+};
 
-    )
-}
-
-export default ChildComponent
+export default ChildComponent;
