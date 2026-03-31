@@ -4,12 +4,12 @@ const ChildComponent = ({ isLoggedIn, setisLoggedIn }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();   // prevent page reload
-        setisLoggedIn(false);  // update parent state
+        setisLoggedIn(true);  // update parent state
     };
 
     return (
         <>
-            {isLoggedIn ? (
+            {!isLoggedIn ? (
                 <form onSubmit={handleSubmit} action="">
                     <label htmlFor="Username">Username:</label>
                     <input id="Username" type="text" />

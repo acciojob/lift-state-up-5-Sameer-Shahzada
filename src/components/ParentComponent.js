@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ChildComponent from "./ChildComponent";
 
 const ParentComponent = () => {
-    const [isLoggedIn, setisLoggedIn] = useState(true);
+    const [isLoggedIn, setisLoggedIn] = useState(false);
 
     return (
         <>
